@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 import os
 from pymongo import MongoClient
 from bson import ObjectId
-from datetime import datetime
 from bson import DBRef
-import base64
 from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
