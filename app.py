@@ -5,9 +5,7 @@ from bson import ObjectId
 from datetime import datetime
 from bson import DBRef
 import base64
-from flask_mail import Mail, Message
 from flask_bcrypt import Bcrypt
-from datetime import timedelta
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
