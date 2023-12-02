@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Dashboard</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Lista de usuarios</li>
+    </ol>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Usuarios
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Username</th>
+                    <th>Correo</th>
+                    <!-- <th></th>
+                    <th></th> -->
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Username</th>
+                    <th>Correo</th>
+                    <!-- <th></th>
+                    <th></th> -->
+                </tr>
+            </tfoot>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <!-- <td>
+                        <a href="{{ url_for('update', _id=user._id) }}">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('borrar', _id=user._id) }}">Eliminar</a>
+                    </td> -->
+
+                </tr>
+                {% endfor %}
+                <a href="{{ url_for('createUser') }}">Crear Usuario</a>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

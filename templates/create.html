@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>Crear Usuario</h1>
+<form method="post" action="{{ url_for('create') }}">
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" required><br>
+
+    <label for="username">Usuario:</label>
+    <input type="text" name="username" required><br>
+
+    <label for="password">Contraseña:</label>
+    <input type="password" name="password" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required><br>
+
+    <button type="submit">Crear Usuario</button>
+</form>
+<a href="{{ url_for('Usuarios') }}">Volver a la lista de usuarios</a>
+
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Dashboard</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">Lista de sensores</li>
+    </ol>
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Sensores
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Sensor_id</th>
+                    <th>Descripcion</th>
+                    <th>Ubicacion</th>
+                    <th>Disponible</th>
+                    <th>Tipo</th>
+                    <th>Valor</th> 
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Sensor_id</th>
+                    <th>Descripcion</th>
+                    <th>Ubicacion</th>
+                    <th>Disponible</th>
+                    <th>Tipo</th>
+                    <th>Valor</th> 
+                </tr>
+            </tfoot>
+            <tbody>
+                {% for sensor in sensors %}
+                <tr>
+                    <td>{{ sensor.sensor_id }}</td>
+                    <td>{{ sensor.description }}</td>
+                    <td>{{ sensor.location }}</td>
+                    <td>{{ sensor.enabled }}</td>
+                    <td>{{ sensor.type }}</td>
+                    <td>{{ sensor.value }}</td>
+
+                </tr>
+                {% endfor %}
+                <a href="{{ url_for('createSensor') }}">Crear Sensor</a>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

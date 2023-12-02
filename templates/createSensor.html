@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="text-3xl font-bold mb-6">Crear Sensor</h1>
+    <form method="post" action="{{ url_for('createS') }}" class="max-w-md mx-auto">
+        <div class="mb-4">
+            <label for="sensor_id" class="block text-sm font-medium text-gray-600">ID del Sensor:</label>
+            <input type="text" name="sensor_id" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="description" class="block text-sm font-medium text-gray-600">Descripción:</label>
+            <input type="text" name="description" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="location" class="block text-sm font-medium text-gray-600">Ubicación:</label>
+            <input type="text" name="location" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="type" class="block text-sm font-medium text-gray-600">Tipo:</label>
+            <input type="text" name="type" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="enabled" class="block text-sm font-medium text-gray-600">Habilitado:</label>
+            <select name="enabled" class="mt-1 p-2 w-full border rounded-md" required>
+                <option value="True">Sí</option>
+                <option value="False">No</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="value" class="block text-sm font-medium text-gray-600">Valor:</label>
+            <input type="text" name="value" class="mt-1 p-2 w-full border rounded-md" required>
+        </div>
+
+        <button type="submit" class="bg-green-500 text-white p-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring focus:border-blue-300">
+            Crear Sensor
+        </button>
+    </form>
+    
+    <a href="{{ url_for('vendedorGrafico') }}" class="block mt-4 text-green-500 hover:underline">Volver a la lista de sensores</a>
+</div>
+
+{% endblock %}
